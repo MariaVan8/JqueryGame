@@ -21,6 +21,52 @@
 <section>
     <div class="box-container">
         <h2>Assignment 02- Green Mode</h2>
+        <div class="btnscreen2">
+        <button type="button" class="btn btn-info help-button" >Help</button> 
+         <button type="button" id="btn-quit" class="btn btn-danger">Quit</button>
+        </div>
+        <div class="modal" id ="helpModal"  tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Choose # of players, enter name(s), select mode, click play.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id = "moreInfo" class="btn btn-primary">More info</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="info" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Use a spacebar to make R2D2 jump.</p>
+                  <p>Avoid Obstacles</p>
+                  <p>Find Obi-wan</p>
+                  <p>Save the galaxy</p>
+                  <p>push to github</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+
+
         <div id="screen1">
             <h1 class="title1">Splash</h1>
             <p>Debbugging is like being the detective in a crime movie where you are also the murderer</p>

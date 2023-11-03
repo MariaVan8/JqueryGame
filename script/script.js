@@ -6,6 +6,7 @@ const game = {
     SwitchScreen(screenId){
         $('[id^="screen"]').hide()
         $('#'+screenId).show()
+        $('#btn-quit').hide();
         if(screenId !== 'screen2'){
             game.isRunning=false;
         }
@@ -34,9 +35,11 @@ const game = {
     },
     init(){
         //Event listeners
-
+        $('#btn-quit').hide();
         $('.start-button').click(()=>{
           this.SwitchScreen('screen2'); 
+          $('#btn-quit').show();
+
         });
 
         $('.play-icon').click(()=>{
@@ -44,9 +47,11 @@ const game = {
         });
 
         $('#screen2 .quit-button').click(function(){
+            $('#btn-quit').hide();
             if(!game.isRunning){
                 game.SwitchScreen('screen3');
-            }
+            } 
+          
         });
 
         $('.again-button').click(()=>{
@@ -57,6 +62,7 @@ const game = {
         });
 
         $('.exit-button').click(function(){
+
             if(!game.isRunning){
                 game.SwitchScreen('screen1');
             
@@ -69,7 +75,27 @@ const game = {
 
 };
 
-$(document).ready(()=>{
+$(document).ready(function(){
     game.init();
-})
+
+    $('#btn-quit').hide();
+
+    $('.help-button').on('click', function(){
+        $('#helpModal').modal('show');
+    });
+    $('#moreInfo').on('click', function(){
+        $('#info').modal('show')
+    })
+
+    $('#close').on('click', function(){
+        $('#info').modal('hide')
+        $('#helpModal').modal('hide');
+    });
+
+    $('#btn-quit').on('click', function(){
+       
+          game.SwitchScreen('screen1');
+        
+    })
+});
 
